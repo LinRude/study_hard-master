@@ -128,6 +128,7 @@ export default {
       this.date = formatDate(new Date())
     }, 1000);
     console.log('master');
+    console.log(this.date);
   },
   methods: {
     cancelLoading() {
