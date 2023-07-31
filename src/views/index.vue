@@ -48,7 +48,7 @@
               style="width: 6.25rem; background-color: #0f1325; text-align: right;"
             >
               <span class="react-after"></span>
-              <span class="text">2020年03月16日 周一 12:00</span>
+              <span class="text">{{ date }}</span>
             </div>
           </div>
         </div>
@@ -104,12 +104,15 @@ import centerRight2 from "./centerRight2";
 import center from "./center";
 import bottomLeft from "./bottomLeft";
 import bottomRight from "./bottomRight";
+import formatDate from "../utils/formatDate";
 export default {
   data() {
     return {
-      loading: true
+      loading: true,
+      date:''
     };
   },
+
   components: {
     centerLeft1,
     centerLeft2,
@@ -121,6 +124,9 @@ export default {
   },
   mounted() {
     this.cancelLoading();
+    setInterval(() => {
+      this.date = formatDate(new Date())
+    }, 1000);
   },
   methods: {
     cancelLoading() {
