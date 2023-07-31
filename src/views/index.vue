@@ -127,6 +127,7 @@ export default {
     setInterval(() => {
       this.date = formatDate(new Date())
     }, 1000);
+    console.log('master');
   },
   methods: {
     cancelLoading() {
